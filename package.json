@@ -1,0 +1,20 @@
+{
+  "name": "tsne-viz",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "observable dev",
+    "build": "observable build",
+    "postbuild": "sed -i 's|<link rel=\"icon\".*|<link rel=\"icon\" href=\"figures/icon.png\" type=\"image/png\" sizes=\"32x32\">|' docs/index.html",
+    "deploy": "npm run build && rm -rf docs && mv dist docs && touch docs/.nojekyll && git add docs && git commit -m \"Deploy docs\" && git push"
+  },
+  "homepage": "https://oriol-bustos.github.io/tsne-viz",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  },
+  "dependencies": {
+    "@observablehq/inputs": "^0.12.0",
+    "@observablehq/plot": "^0.6.17",
+    "d3": "^7.9.0",
+    "plotly.js-dist-min": "^3.0.1"
+  }
+}
